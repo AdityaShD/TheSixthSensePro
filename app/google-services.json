@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "812435070816",
+    "firebase_url": "https://hackbpitpro.firebaseio.com",
+    "project_id": "hackbpitpro",
+    "storage_bucket": "hackbpitpro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812435070816:android:281dcf62404eb3d1",
+        "android_client_info": {
+          "package_name": "com.example.hackbpitpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812435070816-8v0qs5j992cnl1pthec9j0gao542fq3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hackbpitpro",
+            "certificate_hash": "bfb4095f93608665db896d4d252d4ea3f01ed919"
+          }
+        },
+        {
+          "client_id": "812435070816-91ol5eu1gk04pkojdbhl4fprl26pq4ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATtA4Htu7m8M3J_57wyD02zIwkqj5eyg8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812435070816-91ol5eu1gk04pkojdbhl4fprl26pq4ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

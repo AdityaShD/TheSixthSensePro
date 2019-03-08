@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="#000000">
+
+    <com.wonderkiln.camerakit.CameraView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="490dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="490dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+
+
+        />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/camButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="173dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="173dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        fancy:fb_borderColor="#00E5FF"
+        fancy:fb_defaultColor="#FFFFFF"
+        fancy:fb_focusColor="#313131"
+        fancy:fb_fontIconSize="20sp"
+        fancy:fb_borderWidth="3dp"
+        fancy:fb_iconPaddingLeft="0dp"
+        fancy:fb_iconPaddingRight="0dp"
+        fancy:fb_iconResource="@drawable/camera_enchanced"
+        fancy:fb_radius="80dp" />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/fancyButtonocr"
+        android:layout_width="104dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="148dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        fancy:fb_defaultColor="#FFFFFF"
+        fancy:fb_radius="80dp"
+        fancy:fb_text="OCR"
+        fancy:fb_textColor="#000000"
+        fancy:fb_textFontRes="@font/luckiest_guy"
+        fancy:fb_textSize="20sp" />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/fancyVision"
+        android:layout_width="104dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="148dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        fancy:fb_defaultColor="#FFFFFF"
+        fancy:fb_radius="80dp"
+        fancy:fb_text="VISION"
+        fancy:fb_textColor="#000000"
+
+        fancy:fb_textFontRes="@font/luckiest_guy"
+        fancy:fb_textSize="20sp" />
+
+
+    <TextView
+
+        android:id="@+id/navSam"
+        android:layout_width="106dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/shrikhand"
+        android:text="S.A.M."
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#FFFFFF"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+
+        android:id="@+id/navHad"
+        android:layout_width="106dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/shrikhand"
+        android:text="H.A.D."
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+
+        android:id="@+id/navImageLeft"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/navigator_left_white"
+
+        />
+
+    <ImageView
+
+        android:id="@+id/navImageRight"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="22dp"
+
+        android:src="@drawable/navigator_right_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
