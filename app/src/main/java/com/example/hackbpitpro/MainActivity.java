@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private TextToSpeech tts;
     private FancyButton OcrButton,VisionButton;
     private ImageView navLeft,navRight;
+    private CameraView cam;
 
 
     @Override
