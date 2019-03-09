@@ -1,10 +1,16 @@
 package com.example.hackbpitpro;
 
+import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,7 +60,9 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private TextToSpeech tts;
     private FancyButton OcrButton,VisionButton;
     private ImageView navLeft,navRight;
-    private CameraView cam;
+    private ImageView phoneButton;
+    int MY_PERMISSIONS_REQUEST_CALL_PHONE=1;
+    private ImageView audioBook;
 
 
     @Override
@@ -72,7 +80,8 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         NavigatorRightHad=findViewById(R.id.navHad);
         navLeft=findViewById(R.id.navImageLeft);
         navRight=findViewById(R.id.navImageRight);
-
+        phoneButton=findViewById(R.id.phoneButton);
+        audioBook=findViewById(R.id.audioBook);
 
         tts=new TextToSpeech(this,this);
 
@@ -166,6 +175,13 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
            }
        });
 
+       NavigatorLeftSam.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               tts.speak("Navigation button Long Press to Navigate",TextToSpeech.QUEUE_FLUSH,null);
+           }
+       });
+
        navLeft.setOnLongClickListener(new View.OnLongClickListener() {
            @Override
            public boolean onLongClick(View v) {
@@ -183,7 +199,12 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
            }
        });
 
-
+      navLeft.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              tts.speak("Navigation Button Long Press to Navigate",TextToSpeech.QUEUE_FLUSH,null);
+          }
+      });
 
        NavigatorRightHad.setOnLongClickListener(new View.OnLongClickListener() {
            @Override
@@ -199,6 +220,12 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
                }
 
                return false;
+           }
+       });
+       NavigatorRightHad.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               tts.speak("Navigation Button Long Press to Navigate",TextToSpeech.QUEUE_FLUSH,null);
            }
        });
 
@@ -221,7 +248,98 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
             }
         });
 
+        navRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tts.speak("Navigation Button Long Press to Navigate",TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
 
+
+
+        phoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                tts.speak("Phone Button Long Press To Call",TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+      phoneButton.setOnLongClickListener(new View.OnLongClickListener() {
+          @Override
+          public boolean onLongClick(View v) {
+
+              v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+
+
+
+                  String TeleNo="8743997206";
+                  Intent intent = new Intent("android.intent.action.CALL");
+                  Uri data = Uri.parse("tel:"+ TeleNo );
+                  intent.setData(data);
+                 // startActivity(intent);
+                  if (ContextCompat.checkSelfPermission(MainActivity.this,
+                          Manifest.permission.CALL_PHONE)
+                          != PackageManager.PERMISSION_GRANTED) {
+
+                      ActivityCompat.requestPermissions(MainActivity.this,
+                              new String[]{Manifest.permission.CALL_PHONE},
+                              MY_PERMISSIONS_REQUEST_CALL_PHONE);
+
+                      // MY_PERMISSIONS_REQUEST_CALL_PHONE is an
+                      // app-defined int constant. The callback method gets the
+                      // result of the request.
+                  } else {
+                      //You already have permission
+                      try {
+                          startActivity(intent);
+                      } catch(SecurityException e) {
+                          e.printStackTrace();
+                      }
+                  }
+
+
+
+
+
+
+
+              return false;
+          }
+      });
+
+
+      audioBook.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              tts.speak("Audio Book Button Long press for audio books",TextToSpeech.QUEUE_FLUSH,null);
+
+          }
+      });
+
+      audioBook.setOnLongClickListener(new View.OnLongClickListener() {
+          @Override
+          public boolean onLongClick(View v) {
+
+              v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+              String urlString = "https://adityashd.github.io/TheSixthSensePro/";
+              Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(urlString));
+              intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+              intent.setPackage("com.android.chrome");
+              try {
+                  startActivity(intent);
+              } catch (ActivityNotFoundException ex) {
+                  // Chrome browser presumably not installed so allow user to choose instead
+                  intent.setPackage(null);
+                  startActivity(intent);
+              }
+
+
+
+
+              return false;
+          }
+      });
 
 
     }

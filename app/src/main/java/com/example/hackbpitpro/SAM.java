@@ -137,7 +137,7 @@ public class SAM extends AppCompatActivity implements TextToSpeech.OnInitListene
 
 
                v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-               tts.speak("Switching to SAM",TextToSpeech.QUEUE_FLUSH,null);
+               tts.speak("Switching to HAD",TextToSpeech.QUEUE_FLUSH,null);
 
                if(tts.isSpeaking()) {
                    Intent intent = new Intent(SAM.this, HearingAssist.class);
@@ -154,7 +154,7 @@ public class SAM extends AppCompatActivity implements TextToSpeech.OnInitListene
             public boolean onLongClick(View v) {
 
                 v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-                tts.speak("Switching to SAM",TextToSpeech.QUEUE_FLUSH,null);
+                tts.speak("Switching to HAD",TextToSpeech.QUEUE_FLUSH,null);
 
                 if(tts.isSpeaking()) {
                     Intent intent = new Intent(SAM.this, HearingAssist.class);
@@ -172,7 +172,7 @@ public class SAM extends AppCompatActivity implements TextToSpeech.OnInitListene
           public boolean onLongClick(View v) {
 
               v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-              tts.speak("Switching to SAM",TextToSpeech.QUEUE_FLUSH,null);
+              tts.speak("Switching to VISION",TextToSpeech.QUEUE_FLUSH,null);
 
               if(tts.isSpeaking()) {
                   Intent intent = new Intent(SAM.this, MainActivity.class);
@@ -190,7 +190,7 @@ public class SAM extends AppCompatActivity implements TextToSpeech.OnInitListene
           @Override
           public boolean onLongClick(View v) {
               v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-              tts.speak("Switching to SAM",TextToSpeech.QUEUE_FLUSH,null);
+              tts.speak("Switching to VISION",TextToSpeech.QUEUE_FLUSH,null);
 
               if(tts.isSpeaking()) {
                   Intent intent = new Intent(SAM.this, MainActivity.class);
